@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Yusr Architectural Contracting Co.</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Marcellus&family=Noto+Sans+Arabic:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           Premium Structural Layout & Architectural Brand Definitions
+           ========================================================================== */
+        :root {
+            /* Color Palette Archetypes */
+            --lux-bg-cream: #F9F6F0;       /* Warm elegant cream background */
+            --lux-bg-pure: #FFFFFF;       /* Pure white structural cards */
+            --lux-primary-charcoal: #252422; /* High-end contrast dark charcoal text/headers */
+            --lux-secondary-brown: #3D3A36;  /* Sophisticated intermediate shade tones */
+            --lux-accent-gold: #C5A059;     /* Deep refined gold/bronze accent */
+            --lux-accent-gold-hover: #A6823C;
+            --lux-border-grey: #E3DFD5;     /* Super subtle framework dividers */
+            --lux-card-shadow: 0 12px 40px rgba(37, 36, 34, 0.04);
+            --lux-card-shadow-hover: 0 20px 50px rgba(197, 160, 89, 0.12);
+            
+            /* Typography Scales */
+            --font-heading: 'Marcellus', 'Cinzel', 'Noto Sans Arabic', serif;
+            --font-body: 'Plus Jakarta Sans', 'Noto Sans Arabic', sans-serif;
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Global Foundations resets */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            background-color: var(--lux-bg-cream);
+            color: var(--lux-primary-charcoal);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Bi-directional Font & Structural Tuning */
+        html[dir="rtl"] {
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+        html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 {
+            font-family: 'Noto Sans Arabic', serif;
+        }
+
+        /* Layout Containers */
+        .section-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        /* Global Badges & Headings */
+        .section-badge {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--lux-accent-gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        html[dir="rtl"] .section-badge {
+            letter-spacing: 0;
+        }
+
+        .section-heading {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--lux-primary-charcoal);
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+        .section-heading.inverted {
+            color: var(--lux-bg-cream);
+        }
+
+        .text-center-wrapper {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        /* ==========================================================================
+           1. Header Navigation System
+           ========================================================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(249, 246, 240, 0.95);
+            border-bottom: 1px solid var(--lux-border-grey);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .main-navigation {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--lux-secondary-brown);
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding: 8px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--lux-accent-gold);
+            transition: var(--transition-smooth);
+        }
+        html[dir="rtl"] .nav-link::after {
+            left: auto;
+            right: 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--lux-accent-gold);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cta-button-header {
+            text-decoration: none;
+            padding: 10px 22px;
+            font-size: 0.85rem;
+            background-color: var(--lux-primary-charcoal);
+            color: var(--lux-bg-cream);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--lux-primary-charcoal);
+            transition: var(--transition-smooth);
+        }
+
+        .cta-button-header:hover {
+            background-color: transparent;
+            color: var(--lux-primary-charcoal);
+        }
+
+        .lang-toggle-btn {
+            background: transparent;
+            border: 1px solid var(--lux-accent-gold);
+            color: var(--lux-primary-charcoal);
+            padding: 8px 14px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .lang-toggle-btn:hover {
+            background-color: var(--lux-accent-gold);
+            color: #FFF;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--lux-primary-charcoal);
+            transition: var(--transition-smooth);
+        }
+
+        /* ==========================================================================
+           2. Hero Section Layout
+           ========================================================================== */
+        .hero-section {
+            height: 100vh;
+            min-height: 700px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: #FFFFFF;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.8rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+        html[dir="rtl"] .hero-title {
+            font-size: 3.4rem;
+            letter-spacing: 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-actions-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+        }
+        html[dir="rtl"] .btn { letter-spacing: 0; }
+
+        .btn-primary {
+            background-color: var(--lux-accent-gold);
+            color: #FFFFFF;
+            border: 1px solid var(--lux-accent-gold);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--lux-accent-gold-hover);
+            border-color: var(--lux-accent-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary:hover {
+            border-color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           3. Stats Counter Section
+           ========================================================================== */
+        .stats-bar {
+            background-color: var(--lux-primary-charcoal);
+            color: var(--lux-bg-cream);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .stats-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--lux-accent-gold);
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(249, 246, 240, 0.7);
+        }
+        html[dir="rtl"] .stat-label { letter-spacing: 0; }
+
+        /* ==========================================================================
+           4. About Us Master Grid
+           ========================================================================== */
+        .about-section {
+            background-color: var(--lux-bg-cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-lead-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--lux-secondary-brown);
+            margin-bottom: 40px;
+        }
+
+        .strategic-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .pillar-card {
+            background-color: var(--lux-bg-pure);
+            padding: 30px;
+            border-left: 3px solid var(--lux-accent-gold);
+            box-shadow: var(--lux-card-shadow);
+        }
+        html[dir="rtl"] .pillar-card {
+            border-left: none;
+            border-right: 3px solid var(--lux-accent-gold);
+        }
+
+        .pillar-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--lux-primary-charcoal);
+        }
+
+        .pillar-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--lux-secondary-brown);
+        }
+
+        .goals-wrapper {
+            background-color: rgba(61, 58, 54, 0.03);
+            padding: 30px;
+            border: 1px solid var(--lux-border-grey);
+        }
+
+        .goals-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .goals-list {
+            list-style: none;
+        }
+
+        .goals-list li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 24px;
+        }
+        html[dir="rtl"] .goals-list li {
+            padding-left: 0;
+            padding-right: 24px;
+        }
+
+        .goals-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--lux-accent-gold);
+            font-weight: bold;
+        }
+        html[dir="rtl"] .goals-list li::before {
+            left: auto;
+            right: 0;
+        }
+
+        .about-image-frame {
+            position: relative;
+        }
+
+        .about-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .experience-badge-floating {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background-color: var(--lux-primary-charcoal);
+            color: #FFF;
+            padding: 24px;
+            max-width: 160px;
+            text-align: center;
+            border-bottom: 4px solid var(--lux-accent-gold);
+        }
+        html[dir="rtl"] .experience-badge-floating {
+            left: auto;
+            right: -20px;
+        }
+
+        .badge-years {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--lux-accent-gold);
+        }
+
+        .badge-text {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           5. Services Dynamic Animated Grid
+           ========================================================================== */
+        .services-section {
+            background-color: var(--lux-primary-charcoal);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--lux-accent-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition-smooth);
+        }
+        html[dir="rtl"] .service-card::before {
+            transform-origin: right;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+            border-color: rgba(197, 160, 89, 0.3);
+        }
+
+        .service-icon-placeholder {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(197, 160, 89, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--lux-accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon-placeholder {
+            background-color: var(--lux-accent-gold);
+            color: var(--lux-primary-charcoal);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            margin-bottom: 14px;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ==========================================================================
+           6. Our Process Journey Framework
+           ========================================================================== */
+        .process-section {
+            background-color: var(--lux-bg-pure);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            position: relative;
+            padding-top: 30px;
+            border-top: 1px solid var(--lux-border-grey);
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--lux-accent-gold);
+        }
+        html[dir="rtl"] .process-step::before {
+            left: auto;
+            right: 0;
+        }
+
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--lux-accent-gold);
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+
+        .step-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--lux-secondary-brown);
+        }
+
+        /* ==========================================================================
+           7. Projects Portfolio Filtering Grid Module
+           ========================================================================== */
+        .projects-section {
+            background-color: var(--lux-bg-cream);
+        }
+
+        .projects-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: transparent;
+            border: 1px solid var(--lux-border-grey);
+            padding: 10px 20px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--lux-primary-charcoal);
+            color: var(--lux-bg-cream);
+            border-color: var(--lux-primary-charcoal);
+        }
+
+        .projects-portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background-color: var(--lux-bg-pure);
+            box-shadow: var(--lux-card-shadow);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--lux-card-shadow-hover);
+        }
+
+        .portfolio-img-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background-color: #EAEAEA;
+        }
+
+        .portfolio-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .portfolio-card:hover .portfolio-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .portfolio-card-info {
+            padding: 26px;
+        }
+
+        .project-owner-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            background-color: rgba(197, 160, 89, 0.1);
+            color: var(--lux-accent-gold-hover);
+            padding: 4px 10px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-card-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--lux-primary-charcoal);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .portfolio-card-info p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--lux-secondary-brown);
+        }
+
+        /* ==========================================================================
+           8. Projects Gallery Masonry Grid
+           ========================================================================== */
+        .gallery-section {
+            background-color: var(--lux-bg-pure);
+        }
+
+        .gallery-masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-auto-rows: 240px;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            background-color: #DDD;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* ==========================================================================
+           9. Credentials & Certificates
+           ========================================================================== */
+        .certificates-section {
+            background-color: var(--lux-primary-charcoal);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .certificate-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .certificate-card:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+            border-color: rgba(197, 160, 89, 0.4);
+        }
+
+        .cert-document-wrapper {
+            height: 320px;
+            background-color: rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cert-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cert-details {
+            padding: 20px;
+        }
+
+        .certificate-card h3 {
+            font-family: var(--font-heading);
+            color: #FFF;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .certificate-card p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.4;
+        }
+
+        /* ==========================================================================
+           10. Enterprise Contact Forms & Footer
+           ========================================================================== */
+        .contact-section {
+            background-color: var(--lux-bg-cream);
+        }
+
+        .contact-box-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            background-color: var(--lux-bg-pure);
+        }
+
+        .contact-info-panel {
+            background-color: var(--lux-secondary-brown);
+            color: #FFF;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-panel-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .contact-panel-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+        }
+
+        .office-contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .method-item {
+            display: flex;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .method-icon {
+            font-size: 1.3rem;
+        }
+
+        .method-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--lux-accent-gold);
+        }
+
+        .method-item p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-form-panel {
+            padding: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--lux-primary-charcoal);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--lux-border-grey);
+            background-color: var(--lux-bg-cream);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--lux-primary-charcoal);
+            transition: var(--transition-smooth);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--lux-accent-gold);
+            background-color: #FFF;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            background-color: var(--lux-primary-charcoal);
+            color: #FFF;
+            border: none;
+            padding: 16px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+        }
+        html[dir="rtl"] .form-submit-btn { letter-spacing: 0; }
+
+        .form-submit-btn:hover {
+            background-color: var(--lux-accent-gold);
+        }
+
+        /* Site Footer */
+        .site-footer {
+            background-color: #1A1918;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        .site-footer .section-container {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .partners-marquee-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .partners-title {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            color: var(--lux-accent-gold);
+            margin-bottom: 24px;
+        }
+
+        .partners-logos-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .partner-placeholder-tag {
+            font-family: var(--font-heading);
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 1.1rem;
+        }
+
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .footer-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* ==========================================================================
+           Responsive Viewport Breakdown Matrix
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+            .process-timeline { grid-template-columns: 1fr; gap: 40px; }
+            .process-step { padding-top: 20px; }
+            .certificates-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-box-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .main-navigation {
+                display: none; /* Mobile navigation toggle state map */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--lux-bg-cream);
+                flex-direction: column;
+                padding: 24px;
+                border-bottom: 1px solid var(--lux-border-grey);
+                gap: 16px;
+            }
+            .main-navigation.open { display: flex; }
+            .mobile-menu-toggle { display: flex; }
+            .hero-title { font-size: 2.3rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .projects-header-flex { flex-direction: column; align-items: flex-start; }
+            .certificates-grid { grid-template-columns: 1fr; }
+            .section-heading { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <!-- LOGO PLACEHOLDER -->
+                <img src="IMG_9340.jpeg" alt="Al-Yusr Logo" class="nav-logo" id="siteLogo">
+            </div>
+            
+            <nav class="main-navigation" id="mainNav">
+                <a href="#home" class="nav-link active" data-i18n="nav_home">Home</a>
+                <a href="#about" class="nav-link" data-i18n="nav_about">About Us</a>
+                <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+                <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+                <a href="#gallery" class="nav-link" data-i18n="nav_gallery">Our Projects Gallery</a>
+                <a href="#certificates" class="nav-link" data-i18n="nav_certificates">Certificates</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact Us</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#contact" class="cta-button-header" data-i18n="nav_cta">Get in Touch</a>
+                <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle Language">العربية</button>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <!-- HERO BACKGROUND IMAGE PLACEHOLDER: IMG_9334.jpeg -->
+        <section id="home" class="hero-section" style="background-image: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('IMG_9334.jpeg');">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero_title">BUILDING THE FUTURE WITH EXCELLENCE</h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">Delivering world-class construction, finishing, infrastructure and urban development projects with quality, innovation and trust.</p>
+                <div class="hero-actions-container">
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero_btn_contact">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Counter Bar -->
+        <section class="stats-bar">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label" data-i18n="stat_exp">Years of Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label" data-i18n="stat_projects">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99%</span>
+                    <span class="stat-label" data-i18n="stat_satisfaction">Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label" data-i18n="stat_awards">Industry Awards</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-text-column">
+                        <span class="section-badge" data-i18n="about_badge">CORPORATE PROFILE</span>
+                        <h2 class="section-heading" data-i18n="about_title">About Al-Yusr Arch. Co.</h2>
+                        <p class="about-lead-text" data-i18n="about_main_p">Al-Yusr Architectural Contracting is one of the leading construction companies in the Kingdom of Saudi Arabia...</p>
+                        
+                        <div class="strategic-pillars">
+                            <div class="pillar-card">
+                                <h3 data-i18n="about_vision_title">Vision</h3>
+                                <p data-i18n="about_vision_desc">To be a leading contracting company in Saudi Arabia and the Middle East...</p>
+                            </div>
+                            <div class="pillar-card">
+                                <h3 data-i18n="about_mission_title">Mission</h3>
+                                <p data-i18n="about_mission_desc">To provide comprehensive construction services that exceed client expectations...</p>
+                            </div>
+                        </div>
+
+                        <div class="goals-wrapper">
+                            <h3 class="goals-title" data-i18n="about_goals_title">Our Strategic Goals</h3>
+                            <ul class="goals-list">
+                                <li data-i18n="about_goal_1">Complete projects on time and within budget while maintaining the highest quality.</li>
+                                <li data-i18n="about_goal_2">Build long-term relationships with clients through trust and excellence.</li>
+                                <li data-i18n="about_goal_3">Develop and retain a skilled and motivated workforce.</li>
+                                <li data-i18n="about_goal_4">Keep up with the latest technologies and methods in the construction industry.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-image-column">
+                        <div class="about-image-frame">
+                            <!-- ABOUT SECTION IMAGE PLACEHOLDER -->
+                            <img src="IMG_9353.jpeg" alt="Al-Yusr Structural Engineering" class="about-img">
+                            <div class="experience-badge-floating">
+                                <span class="badge-years">20+</span>
+                                <span class="badge-text" data-i18n="about_floating_badge">Years of Building Trust</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="section-container">
+                <div class="text-center-wrapper">
+                    <span class="section-badge" data-i18n="services_badge">OUR CORE CAPABILITIES</span>
+                    <h2 class="section-heading inverted" data-i18n="services_title">Professional Engineering Services</h2>
+                </div>
+                
+                <!-- Luxury Animated Icons Grid -->
+                <div class="services-grid" id="servicesGrid"></div>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section class="process-section">
+            <div class="section-container">
+                <div class="text-center-wrapper">
+                    <span class="section-badge" data-i18n="process_badge">EXECUTION FRAMEWORK</span>
+                    <h2 class="section-heading" data-i18n="process_title">A Seamless Journey</h2>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step1_title">Discover</h3>
+                            <p data-i18n="step1_desc">Understand your vision, goals and requirements.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step2_title">Design</h3>
+                            <p data-i18n="step2_desc">Crafting intelligent designs that loom and perform.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step3_title">Build</h3>
+                            <p data-i18n="step3_desc">Expert mobilization with quality materials and execution.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step4_title">Deliver</h3>
+                            <p data-i18n="step4_desc">On-time delivery with attention to every detail.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step5_title">Beyond</h3>
+                            <p data-i18n="step5_desc">Ongoing bonding to ensure lasting satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-container">
+                <div class="projects-header-flex">
+                    <div>
+                        <span class="section-badge" data-i18n="portfolio_badge">OUR PORTFOLIO</span>
+                        <h2 class="section-heading" data-i18n="portfolio_title">Track Record of Masterpieces</h2>
+                    </div>
+                    <!-- Portfolio Filtering Controls -->
+                    <div class="portfolio-filters" id="portfolioFilters">
+                        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Projects</button>
+                        <button class="filter-btn" data-filter="commercial" data-i18n="filter_commercial">Commercial & Admin</button>
+                        <button class="filter-btn" data-filter="residential" data-i18n="filter_residential">Residential & Villas</button>
+                        <button class="filter-btn" data-filter="infrastructure" data-i18n="filter_infra">Infrastructure Solutions</button>
+                    </div>
+                </div>
+
+                <!-- Structured Projects Portfolio Grid -->
+                <div class="projects-portfolio-grid" id="projectsGrid"></div>
+            </div>
+        </section>
+
+        <!-- Projects Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-container">
+                <div class="text-center-wrapper">
+                    <span class="section-badge" data-i18n="gallery_badge">VISUAL CHRONICLES</span>
+                    <h2 class="section-heading" data-i18n="gallery_title">Our Projects Gallery</h2>
+                </div>
+                <div class="gallery-masonry-grid">
+                    <div class="gallery-item"><img src="IMG_9356.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9357.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9355.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9354.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9346.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9345.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9347.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9348.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9349.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9352.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9351.jpeg" alt="Project Visual Asset"></div>
+                    <div class="gallery-item"><img src="IMG_9350.jpeg" alt="Project Visual Asset"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates-section">
+            <div class="section-container">
+                <div class="text-center-wrapper">
+                    <span class="section-badge" data-i18n="certs_badge">COMPLIANCE & CREDENTIALS</span>
+                    <h2 class="section-heading inverted" data-i18n="certs_title">Official Qualifications & Accreditations</h2>
+                </div>
+
+                <div class="certificates-grid">
+                    <!-- Certificate Card 1 -->
+                    <div class="certificate-card">
+                        <div class="cert-document-wrapper">
+                            <img src="IMG_9362.jpeg" alt="SCA Membership" class="cert-img">
+                        </div>
+                        <div class="cert-details">
+                            <h3 data-i18n="cert1_title">SCA Membership</h3>
+                            <p data-i18n="cert1_desc">Saudi Contractors Authority Certified Member Registration Document</p>
+                        </div>
+                    </div>
+                    <!-- Certificate Card 2 -->
+                    <div class="certificate-card">
+                        <div class="cert-document-wrapper">
+                            <img src="IMG_9361.jpeg" alt="Balady Classification" class="cert-img">
+                        </div>
+                        <div class="cert-details">
+                            <h3 data-i18n="cert2_title">Balady Services Classification</h3>
+                            <p data-i18n="cert2_desc">Official classification by Ministry of Municipal Rural Affairs and Housing</p>
+                        </div>
+                    </div>
+                    <!-- Certificate Card 3 -->
+                    <div class="certificate-card">
+                        <div class="cert-document-wrapper">
+                            <img src="IMG_9360.jpeg" alt="VAT Registration" class="cert-img">
+                        </div>
+                        <div class="cert-details">
+                            <h3 data-i18n="cert3_title">VAT Registration</h3>
+                            <p data-i18n="cert3_desc">Zakat, Tax and Customs Authority VAT Compliance Certification</p>
+                        </div>
+                    </div>
+                    <!-- Certificate Card 4 -->
+                    <div class="certificate-card">
+                        <div class="cert-document-wrapper">
+                            <img src="IMG_9359.jpeg" alt="National Address Proof" class="cert-img">
+                        </div>
+                        <div class="cert-details">
+                            <h3 data-i18n="cert4_title">National Address Proof</h3>
+                            <p data-i18n="cert4_desc">Official verified legal address documentation inside the Kingdom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <div class="contact-box-grid">
+                    <div class="contact-info-panel">
+                        <h2 class="contact-panel-title" data-i18n="contact_title">LET’S BUILD SOMETHING EXTRAORDINARY</h2>
+                        <p class="contact-panel-desc" data-i18n="contact_subtitle">Partner with Al-Yusr Architectural Contracting Co. to bring engineering milestones to reality with absolute execution mastery.</p>
+                        
+                        <div class="office-contact-methods">
+                            <div class="method-item">
+                                <div class="method-icon">📍</div>
+                                <div>
+                                    <h4 data-i18n="contact_hq_label">Headquarters</h4>
+                                    <p data-i18n="contact_hq_val">Riyadh, Kingdom of Saudi Arabia</p>
+                                </div>
+                            </div>
+                            <div class="method-item">
+                                <div class="method-icon">✉️</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>info@alyusr-arch.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <form id="contactForm" onsubmit="event.preventDefault();">
+                            <div class="form-group">
+                                <label for="form_name" data-i18n="label_name">Full Name</label>
+                                <input type="text" id="form_name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="form_email" data-i18n="label_email">Email Address</label>
+                                <input type="email" id="form_email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="form_phone" data-i18n="label_phone">Phone Number</label>
+                                <input type="tel" id="form_phone" required placeholder="+966 50 000 0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="form_message" data-i18n="label_message">Project Requirements / Message</label>
+                                <textarea id="form_message" rows="5" required placeholder="Describe your architectural or construction pipeline requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="form-submit-btn" data-i18n="btn_submit">GET IN TOUCH</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Structure -->
+    <footer class="site-footer">
+        <div class="section-container">
+            <div class="partners-marquee-section">
+                <h5 class="partners-title" data-i18n="footer_partners">STRATEGIC ENTERPRISE PARTNERS & VENDORS</h5>
+                <div class="partners-logos-container">
+                    <span class="partner-placeholder-tag">Al-Hano Elite</span>
+                    <span class="partner-placeholder-tag">Mad Real Estate</span>
+                    <span class="partner-placeholder-tag">Al-Maneal Enterprise</span>
+                    <span class="partner-placeholder-tag">Al-Qablan Industry</span>
+                    <span class="partner-placeholder-tag">Al-Ajlan Group</span>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom-row">
+                <p class="copyright-text">&copy; 2026 <span data-i18n="footer_copy">Al-Yusr Architectural Contracting Co. All Rights Reserved.</span></p>
+                <p class="footer-signature">Crafted with Luxury Engineering Standards</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dynamic JavaScript Engine -->
+    <script>
+        const i18nTokens = {
+            en: {
+                nav_home: "Home", nav_about: "About Us", nav_services: "Services", nav_projects: "Projects",
+                nav_gallery: "Our Projects Gallery", nav_certificates: "Certificates", nav_contact: "Contact Us", nav_cta: "Get in Touch",
+                hero_title: "BUILDING THE FUTURE WITH EXCELLENCE",
+                hero_subtitle: "Delivering world-class construction, finishing, infrastructure and urban development projects with quality, innovation and trust.",
+                hero_btn_projects: "View Projects", hero_btn_contact: "Contact Us",
+                stat_exp: "Years of Experience", stat_projects: "Projects Completed", stat_satisfaction: "Client Satisfaction", stat_awards: "Industry Awards",
+                about_badge: "CORPORATE PROFILE", about_title: "About Al-Yusr Arch. Co.",
+                about_main_p: "Al-Yusr Architectural Contracting is one of the leading construction companies in the Kingdom of Saudi Arabia, specialized in general contracting services including construction, finishing works, infrastructure, and urban development. Since its establishment, the company has built a reputation for excellence, reliability, and innovation by consistently delivering high-quality projects that meet international standards.",
+                about_vision_title: "Vision", about_vision_desc: "To be a leading contracting company in Saudi Arabia and the Middle East, recognized for delivering high-quality projects with a focus on innovation, sustainability, and customer satisfaction.",
+                about_mission_title: "Mission", about_mission_desc: "To provide comprehensive construction services that exceed client expectations by ensuring quality, safety, and timely delivery, while fostering sustainable development and professional growth.",
+                about_goals_title: "Our Strategic Goals",
+                about_goal_1: "Complete projects on time and within budget while maintaining the highest quality.",
+                about_goal_2: "Build long-term relationships with clients through trust and excellence.",
+                about_goal_3: "Develop and retain a skilled and motivated workforce.",
+                about_goal_4: "Keep up with the latest technologies and methods in the construction industry.",
+                about_floating_badge: "Years of Building Trust", services_badge: "OUR CORE CAPABILITIES", services_title: "Professional Engineering Services",
+                process_badge: "EXECUTION FRAMEWORK", process_title: "A Seamless Journey",
+                step1_title: "Discover", step1_desc: "Understand your vision, goals and requirements.",
+                step2_title: "Design", step2_desc: "Crafting intelligent designs that loom and perform.",
+                step3_title: "Build", step3_desc: "Expert mobilization with quality materials and execution.",
+                step4_title: "Deliver", step4_desc: "On-time delivery with attention to every detail.",
+                step5_title: "Beyond", step5_desc: "Ongoing bonding to ensure lasting satisfaction.",
+                portfolio_badge: "OUR PORTFOLIO", portfolio_title: "Track Record of Masterpieces",
+                filter_all: "All Projects", filter_commercial: "Commercial & Admin", filter_residential: "Residential & Villas", filter_infra: "Infrastructure Solutions",
+                gallery_badge: "VISUAL CHRONICLES", gallery_title: "Our Projects Gallery",
+                certs_badge: "COMPLIANCE & CREDENTIALS", certs_title: "Official Qualifications & Accreditations",
+                cert1_title: "SCA Membership", cert1_desc: "Saudi Contractors Authority Certified Member Registration Document",
+                cert2_title: "Balady Services Classification", cert2_desc: "Official classification by Ministry of Municipal Rural Affairs and Housing",
+                cert3_title: "VAT Registration", cert3_desc: "Zakat, Tax and Customs Authority VAT Compliance Certification",
+                cert4_title: "National Address Proof", cert4_desc: "Official verified legal address documentation inside the Kingdom",
+                contact_title: "LET’S BUILD SOMETHING EXTRAORDINARY",
+                contact_subtitle: "Partner with Al-Yusr Architectural Contracting Co. to bring engineering milestones to reality with absolute execution mastery.",
+                contact_hq_label: "Headquarters", contact_hq_val: "Riyadh, Kingdom of Saudi Arabia",
+                label_name: "Full Name", label_email: "Email Address", label_phone: "Phone Number", label_message: "Project Requirements / Message",
+                btn_submit: "GET IN TOUCH", footer_partners: "STRATEGIC ENTERPRISE PARTNERS & VENDORS", footer_copy: "Al-Yusr Architectural Contracting Co. All Rights Reserved."
+            },
+            ar: {
+                nav_home: "الرئيسية", nav_about: "من نحن", nav_services: "خدماتنا", nav_projects: "مشاريعنا",
+                nav_gallery: "معرض مشاريعنا", nav_certificates: "الشهادات", nav_contact: "اتصل بنا", nav_cta: "تواصل معنا",
+                hero_title: "بناء المستقبل بتميز",
+                hero_subtitle: "تقديم مشاريع بناء وتشطيب وبنية تحتية وتطوير عقاري بمستوى عالمي مع الجودة، الابتكار، والثقة.",
+                hero_btn_projects: "عرض المشاريع", hero_btn_contact: "اتصل بنا",
+                stat_exp: "أكثر من 20 عاماً من الخبرة", stat_projects: "أكثر من 150 مشروعاً منجزاً", stat_satisfaction: "99% رضا العملاء", stat_awards: "أكثر من 15 جائزة في القطاع",
+                about_badge: "ملف الشركة الإستراتيجي", about_title: "عن شركة اليسر المعمارية للمقاولات",
+                about_main_p: "تعد شركة اليسر المعمارية للمقاولات إحدى الشركات الرائدة في مجال الإنشاءات في المملكة العربية السعودية، والمتخصصة في خدمات المقاولات العامة بما في ذلك أعمال البناء والتشطيبات والبنية التحتية والتطوير الحضري. منذ تأسيسها، نجحت الشركة في بناء سمعة قوية قائمة على التميز والموثوقية والابتكار، من خلال تقديم مشاريع عالية الجودة تطابق المعايير العالمية بشكل مستمر.",
+                about_vision_title: "الرؤية", about_vision_desc: "أن نكون شركة مقاولات رائدة في المملكة العربية السعودية والشرق الأوسط، مشهود لها بتقديم مشاريع عالية الجودة مع التركيز على الابتكار والاستدامة ورضا العملاء.",
+                about_mission_title: "الرسالة", about_mission_desc: "تقديم خدمات إنشاءات شاملة تفوق توقعات العملاء من خلال ضمان الجودة والسلامة والتسليم في المواعيد المحددة، مع تعزيز التنمية المستدامة والنمو المهني.",
+                about_goals_title: "أهدافنا الإستراتيجية",
+                about_goal_1: "إنجاز المشاريع في الوقت المحدد وضمن الميزانية مع الحفاظ على أعلى معايير الجودة.",
+                about_goal_2: "بناء علاقات طويلة الأمد مع العملاء من خلال الثقة والتميز.",
+                about_goal_3: "تطوير واستبقاء قوى عاملة ماهرة ومحفزة.",
+                about_goal_4: "مواكبة أحدث التقنيات والأساليب في صناعة الإنشاءات.",
+                about_floating_badge: "عاماً من بناء الثقة العريقة", services_badge: "قدراتنا الهندسية الجوهرية", services_title: "الخدمات الهندسية الاحترافية",
+                process_badge: "منهجية التنفيذ المتكاملة", process_title: "رحلة عمل سلسة",
+                step1_title: "الاكتشاف", step1_desc: "فهم رؤيتك وأهدافك ومتطلباتك بدقة.",
+                step2_title: "التصميم", step2_desc: "صياغة تصاميم ذكية ومميزة تلبي وتفوق التطلعات.",
+                step3_title: "البناء", step3_desc: "حشد الخبرات والمواد عالية الجودة للتنفيذ المتقن.",
+                step4_title: "التسليم", step4_desc: "التسليم في الوقت المحدد مع الاهتمام الصارم بكل التفاصيل.",
+                step5_title: "ما بعد التسليم", step5_desc: "ارتباط مستمر لضمان الرضا الدائم والشهادات المستدامة.",
+                portfolio_badge: "سجل أعمالنا", portfolio_title: "مشاريعنا الإنشائية المتميزة",
+                filter_all: "جميع المشاريع", filter_commercial: "المشاريع التجارية والإدارية", filter_residential: "المجمعات السكنية والفلل", filter_infra: "حلول البنية التحتية",
+                gallery_badge: "سجلات مرئية", gallery_title: "معرض مشاريعنا",
+                certs_badge: "الامتثال والاعتمادات الرسمية", certs_title: "المؤهلات والاعتمادات الرسمية للشركة",
+                cert1_title: "عضوية الهيئة السعودية للمقاولين", cert1_desc: "وثيقة تسجيل عضوية رسمية معتمدة من الهيئة السعودية للمقاولين",
+                cert2_title: "تصنيف خدمات بلدي", cert2_desc: "شهادة التصنيف الرسمي المعتمد من وزارة الشؤون البلدية والقروية والإسكان",
+                cert3_title: "شهادة ضريبة القيمة المضافة", cert3_desc: "شهادة الامتثال الضريبي الصادرة عن هيئة الزكاة والضريبة والجمارك",
+                cert4_title: "إثبات العنوان الوطني", cert4_desc: "مستند العنوان القانوني واللوجستي المعتمد في مناطق المملكة",
+                contact_title: "لنبني شيئاً استثنائياً",
+                contact_subtitle: "شاركونا النجاح في شركة اليسر المعمارية للمقاولات لتحويل الرؤى الهندسية إلى معالم حية على أرض الواقع.",
+                contact_hq_label: "المقر الرئيسي", contact_hq_val: "الرياض، المملكة العربية السعودية",
+                label_name: "الاسم الكامل", label_email: "البريد الإلكتروني", label_phone: "رقم الجوال", label_message: "تفاصيل المشروع / الرسالة",
+                btn_submit: "تواصل معنا الآن", footer_partners: "شركاء النجاح الإستراتيجيين", footer_copy: "شركة اليسر المعمارية للمقاولات. جميع الحقوق محفوظة."
+            }
+        };
+
+        const servicesDatabase = [
+            { id: 1, icon: "🏗️", en: { title: "General Contracting", desc: "Full spectrum elite execution control over civil structures and developments." }, ar: { title: "المقاولات العامة", desc: "إشراف وتنفيذ شامل على أعلى مستوى للمشاريع الإنشائية والمدنية." } },
+            { id: 2, icon: "🧱", en: { title: "Construction", desc: "Precision heavy structural implementations fulfilling rigid engineering designs." }, ar: { title: "أعمال الإنشاءات", desc: "تنفيذ إنشائي دقيق للمباني والهياكل وفق أدق المخططات الهندسية." } },
+            { id: 3, icon: "🏛️", en: { title: "Finishing Works", desc: "Premium interior & exterior detailing utilizing luxury architectural finishings." }, ar: { title: "أعمال التشطيبات", desc: "تشطيبات داخلية وخارجية فاخرة تعكس دقة الهندسة المعمارية." } },
+            { id: 4, icon: "🛣️", en: { title: "Infrastructure", desc: "Robust framework utilities preparation, networks excavation, and paving masterworks." }, ar: { title: "البنية التحتية", desc: "تأسيس شبكات ومرافق البنية التحتية وشبكات الطرق بمواصفات قياسية." } },
+            { id: 5, icon: "📐", en: { title: "Engineering Management", desc: "Operational orchestration safeguarding timelines, budgetary balances, and safety bounds." }, ar: { title: "الإدارة الهندسية", desc: "إدارة متكاملة تضمن الالتزام بالجداول الزمنية والميزانيات ومعايير السلامة." } },
+            { id: 6, icon: "🏙️", en: { title: "Urban Development", desc: "Transformative structural developments matching modern sustainability parameters." }, ar: { title: "التطوير الحضري", desc: "تطوير عقاري وحضري يواكب أحدث معايير الاستدامة وجودة الحياة." } },
+            { id: 7, icon: "💧", en: { title: "Infrastructure Solutions", desc: "Advanced systems for water, sewage, power grids, and subterranean structural work." }, ar: { title: "حلول البنية التحتية", desc: "أنظمة متقدمة لشبكات المياه والصرف والكهرباء والخطوط الجوفية المعقدة." } },
+            { id: 8, icon: "⚙️", en: { title: "Engineering Solutions", desc: "Innovative value engineering overrides optimizing resource layouts flawlessly." }, ar: { title: "الحلول الهندسية", desc: "الهندسة القيمة وحلول الابتكار لترشيد الموارد ورفع كفاءة الأداء." } },
+            { id: 9, icon: "💼", en: { title: "Project Management", desc: "Complete cross-functional management ensuring unmatched technical compliance cycles." }, ar: { title: "إدارة المشاريع", desc: "إشراف شامل متقاطع لضمان أعلى مستويات الامتثال والجودة في المواقع." } },
+            { id: 10, icon: "✒️", en: { title: "Design & Build", desc: "Fluid turn-key conversion loops linking conceptual drafting seamlessly with field masonry." }, ar: { title: "التصميم والتنفيذ", desc: "منظومة تسليم المفتاح المتكاملة التي تربط الفكرة المعمارية بالتنفيذ الفعلي." } }
+        ];
+
+        const projectsDatabase = [
+            { id: 1, cat: "commercial", en: { title: "Commercial Administrative Project - Al-Mounasiya", owner: "Al-Hano Co.", desc: "Concrete Structure - Total Built-up Area 31,000 sqm" }, ar: { title: "إنشاء مشروع تجاري إداري حي المونسية", owner: "شركة الحنو", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 31000 م٢" } },
+            { id: 2, cat: "commercial", en: { title: "Office Building - Al-Murooj District", owner: "Mad Real Estate Co.", desc: "Concrete Structure - Total Built-up Area 12,000 sqm" }, ar: { title: "إنشاء عمارة مكتبية حي المروج", owner: "شركة ماد العقارية", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 12000 م٢" } },
+            { id: 3, cat: "commercial", en: { title: "Hotel Construction - Al-Rahmaniyah District", owner: "Al-Maneal Co.", desc: "Concrete Structure - Total Built-up Area 23,500 sqm" }, ar: { title: "إنشاء فندق حي الرحمانية", owner: "شركة المنيع", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 23500 م٢" } },
+            { id: 4, cat: "commercial", en: { title: "Administrative Building - Al-Taawun District", owner: "Al-Qablan Co.", desc: "Concrete Structure - Total Built-up Area 9,200 sqm" }, ar: { title: "إنشاء مبني إداري حي التعاون", owner: "شركة القبلان", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 9200 م٢" } },
+            { id: 5, cat: "commercial", en: { title: "Administrative Building - Al-Aqeeq District", owner: "Al-Ajlan Co.", desc: "Concrete Structure - Total Built-up Area 18,000 sqm" }, ar: { title: "إنشاء مبني إداري حي العقيق", owner: "شركة العجلان", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 18000 م٢" } },
+            { id: 6, cat: "commercial", en: { title: "Warehouse Logistics Center - Al-Kharj", owner: "Zaid Al-Hussein Co.", desc: "Steel Structure Framework - Total Built-up Area 9,000 sqm" }, ar: { title: "إنشاء مستودعات الخرج", owner: "شركة زيد الحسين", desc: "إنشاء الهيكل الحديدي - إجمالي مسطحات 9000 م٢" } },
+            { id: 7, cat: "commercial", en: { title: "Commercial Residential & Office Tower", owner: "Al-Obailan Group", desc: "Concrete Structure - Total Built-up Area 15,000 sqm" }, ar: { title: "إنشاء برج مكتبي سكني", owner: "العبيلان", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 15000 م٢" } },
+            { id: 8, cat: "commercial", en: { title: "Commercial Building - Al-Sulaimaniyah", owner: "Mobily Co.", desc: "Concrete Structure - Total Built-up Area 17,000 sqm" }, ar: { title: "إنشاء مبني تجاري حي السليمانية", owner: "شركة موبايلي", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 17000 م٢" } },
+            { id: 9, cat: "residential", en: { title: "Construction of (6) Residential Buildings - Al-Rimal", owner: "Abdul Latif Al-Abdul Latif - Abra Al-Afaq Co.", desc: "Concrete Structure - Total Area 26,000 sqm" }, ar: { title: "إنشاء عدد (6) عمارات سكنية بحي الرمال", owner: "عبد اللطيف العبد اللطيف - شركة عبر الآفاق", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 26000 م٢" } },
+            { id: 10, cat: "commercial", en: { title: "Commercial Admin Complex - Northern Maather", owner: "Abdul Latif Al-Abdul Latif - Abra Al-Afaq Co.", desc: "Concrete Structure - Total Built-up Area 38,600 sqm" }, ar: { title: "إنشاء مبني تجاري إداري حي المعذر الشمالي", owner: "عبد اللطيف العبد اللطيف - شركة عبر الآفاق", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 38600 م٢" } },
+            { id: 11, cat: "commercial", en: { title: "Commercial Structure - Al-Taawun District", owner: "Hayaza Real Estate", desc: "Concrete Structure - Total Built-up Area 20,000 sqm" }, ar: { title: "إنشاء مبني تجاري حي التعاون", owner: "شركة حيازة", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 20000 م٢" } },
+            { id: 12, cat: "residential", en: { title: "Residential Villa Compound Complex - Irqah", owner: "Majzia Investment Co.", desc: "Turnkey Project Delivery - Total Built-up Area 3,200 sqm" }, ar: { title: "إنشاء مجمع فلل سكنية حي عرقة", owner: "شركة مجزية الإستثمارية", desc: "تسليم مفتاح - إجمالي مسطحات 3200 م٢" } },
+            { id: 13, cat: "residential", en: { title: "Luxury Private Palace - Irqah District", owner: "Mr. Faisal Al-Wabil", desc: "Concrete Structural Baseline - Total Area 10,000 sqm" }, ar: { title: "إنشاء قصر سكني حي عرقة", owner: "الإستاذ فيصل الوابل", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 10000 م٢" } },
+            { id: 14, cat: "residential", en: { title: "Residential Royal Palace - Al-Maather District", owner: "Princess Hessa Al-Damir", desc: "Concrete Structure Core Phase - Total Area 8,000 sqm" }, ar: { title: "إنشاء قصر سكني حي المعذر", owner: "الأميرة حصة الدامر", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 8000 م٢" } },
+            { id: 15, cat: "residential", en: { title: "Mosque & Housing Complex - Granada", owner: "Mr. Ibrahim Saad Al-Hussein", desc: "Turnkey Construction Execution - 5,000 sqm" }, ar: { title: "إنشاء مسجد وسكن الإمام حي غرناطة", owner: "الاستاذ إبراهيم سعد الحسين", desc: "تسليم مفتاح - إجمالي مسطحات 5000 م٢" } },
+            { id: 16, cat: "residential", en: { title: "Residential Villa Cluster Compound - Al-Nafl", owner: "Theeb Real Estate Development", desc: "Turnkey Full Scale Build Completion - 8,000 sqm" }, ar: { title: "إنشاء مجمع فلل سكنية حي النفل", owner: "شركة ذيب للتطوير العقاري", desc: "تسليم مفتاح - إجمالي مسطحات 8000 م٢" } },
+            { id: 17, cat: "residential", en: { title: "Residential Apartment Block - Al-Sulaimaniyah", owner: "Al-Mulla Real Estate Development", desc: "Structural Shell Framework Execution - 5,000 sqm" }, ar: { title: "إنشاء عمارة سكنية حي السليمانية", owner: "شركة الملا للتطوير العقاري", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 5000 م٢" } },
+            { id: 18, cat: "residential", en: { title: "Residential Blocks Structural Execution - Al-Nafl", owner: "Al-Omer Investment", desc: "Concrete Structural Architecture Engineering - 9,000 sqm" }, ar: { title: "إنشاء عمارات سكنية حي النفل", owner: "شركة العمر للإستثمار", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 9000 م٢" } },
+            { id: 19, cat: "residential", en: { title: "Residential Buildings Construction - Al-Yasmin", owner: "Foonoon Al-Benaa Architecture", desc: "Concrete Structure Engineering Phases - 15,000 sqm" }, ar: { title: "إنشاء عمارات سكنية حي الياسمين", owner: "شركة فنون البناء", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 15000 م٢" } },
+            { id: 20, cat: "residential", en: { title: "Residential Towers Construction - Al-Wadi", owner: "Mr. Waleed Al-Qasim", desc: "Turnkey Finish Engineering Execution - 6,000 sqm" }, ar: { title: "إنشاء عمارات سكنية حي الوادي", owner: "الاستاذ وليد القاسم", desc: "تسليم مفتاح - إجمالي مسطحات 6000 م٢" } },
+            { id: 21, cat: "residential", en: { title: "Residential Villa Compound Block - Al-Rimal", owner: "Asas Al-Jawhara Real Estate Dev", desc: "Concrete Structural Phase Works - 18,000 sqm" }, ar: { title: "إنشاء مجمع فلل سكنية حي الرمال", owner: "شركة أساس الجوهرة للتطوير العقاري", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 18000 م٢" } },
+            { id: 22, cat: "residential", en: { title: "Residential Complexes Development - Al-Aridh", owner: "Al-Sulaiman Real Estate Group", desc: "Concrete Structural Framework Assembly - 46,000 sqm" }, ar: { title: "إنشاء عمارات سكنية حي العارض", owner: "شركة السليمان العقارية", desc: "إنشاء الهيكل الخرساني - إجمالي مسطحات 46000 م٢" } },
+            { id: 23, cat: "commercial", en: { title: "Three Foods Markets Commercial Complex - Al-Wadi", owner: "Al-Qasim Investments Group", desc: "Full Turnkey Commercial Development - 5,000 sqm" }, ar: { title: "إنشاء مبني أسواق الأطعمة الثلاثة حي الوادي", owner: "شركة القاسم للإستثمار", desc: "تسليم مفتاح - إجمالي مسطحات 5000 م٢" } },
+            { id: 24, cat: "infrastructure", en: { title: "Educational Complex Structural Restoration - Al-Nafl", owner: "Al-Fursan Schools Group", desc: "Turnkey Complex Modernization & Refurbishment - 5,200 sqm" }, ar: { title: "ترميم وتشطيب مدرسة حي النفل", owner: "مدارس الفرسان", desc: "تسليم مفتاح - إجمالي مسطحات 5200 م٢" } }
+        ];
+
+        let currentLanguage = "en";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initializeLanguageSwitcher();
+            renderServicesGrid();
+            renderProjectsPortfolio("all");
+            initializePortfolioFilters();
+            initializeMobileMenu();
+            trackScrollNavigationHighlight();
+        });
+
+        function initializeLanguageSwitcher() {
+            const langBtn = document.getElementById("langToggle");
+            langBtn.addEventListener("click", () => {
+                currentLanguage = currentLanguage === "en" ? "ar" : "en";
+                langBtn.innerText = currentLanguage === "en" ? "العربية" : "English";
+                
+                const htmlNode = document.documentElement;
+                htmlNode.setAttribute("lang", currentLanguage);
+                htmlNode.setAttribute("dir", currentLanguage === "ar" ? "rtl" : "ltr");
+                
+                document.querySelectorAll("[data-i18n]").forEach(element => {
+                    const token = element.getAttribute("data-i18n");
+                    if (i18nTokens[currentLanguage][token]) {
+                        element.innerText = i18nTokens[currentLanguage][token];
+                    }
+                });
+                
+                renderServicesGrid();
+                const activeFilter = document.querySelector(".filter-btn.active").getAttribute("data-filter");
+                renderProjectsPortfolio(activeFilter);
+            });
+        }
+
+        function renderServicesGrid() {
+            const container = document.getElementById("servicesGrid");
+            container.innerHTML = "";
+            
+            servicesDatabase.forEach(item => {
+                const localeData = currentLanguage === "ar" ? item.ar : item.en;
+                const cardHTML = `
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon-placeholder">${item.icon}</div>
+                            <h3>${localeData.title}</h3>
+                            <p>${localeData.desc}</p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        function renderProjectsPortfolio(filterValue) {
+            const container = document.getElementById("projectsGrid");
+            container.innerHTML = "";
+            
+            const filteredDataset = filterValue === "all" 
+                ? projectsDatabase 
+                : projectsDatabase.filter(project => project.cat === filterValue);
+                
+            filteredDataset.forEach(item => {
+                const localeData = currentLanguage === "ar" ? item.ar : item.en;
+                const cardHTML = `
+                    <div class="portfolio-card" data-category="${item.cat}">
+                        <div class="portfolio-img-wrapper">
+                            <img src="IMG_9344.jpeg" alt="${localeData.title}">
+                        </div>
+                        <div class="portfolio-card-info">
+                            <span class="project-owner-badge">${localeData.owner}</span>
+                            <h3>${localeData.title}</h3>
+                            <p>${localeData.desc}</p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        function initializePortfolioFilters() {
+            const filters = document.querySelectorAll("#portfolioFilters .filter-btn");
+            filters.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    filters.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    const category = btn.getAttribute("data-filter");
+                    renderProjectsPortfolio(category);
+                });
+            });
+        }
+
+        function initializeMobileMenu() {
+            const toggleBtn = document.getElementById("mobileMenuBtn");
+            const mainNav = document.getElementById("mainNav");
+            
+            toggleBtn.addEventListener("click", () => {
+                mainNav.classList.toggle("open");
+                toggleBtn.classList.toggle("active");
+            });
+            
+            document.querySelectorAll(".nav-link").forEach(link => {
+                link.addEventListener("click", () => {
+                    mainNav.classList.remove("open");
+                    toggleBtn.classList.remove("active");
+                });
+            });
+        }
+
+        function trackScrollNavigationHighlight() {
+            const sections = document.querySelectorAll("section[id]");
+            window.addEventListener("scroll", () => {
+                let currentSectionId = "";
+                const scrollPosition = window.scrollY + 120;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSectionId = section.getAttribute("id");
+                    }
+                });
+                
+                document.querySelectorAll(".nav-link").forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentSectionId}`) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
